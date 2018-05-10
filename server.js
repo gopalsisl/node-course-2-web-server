@@ -1,6 +1,7 @@
 const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
+const port=process.env.PORT ||3000
 var app=new express();
 // app.use((req,res,next)=>{
 //     res.render('maintenence.hbs')
@@ -37,4 +38,6 @@ app.get('/about',(req,res)=>{
         pageTitle:'About us',
     });
 })
-app.listen('3000');
+app.listen(port,()=>{
+    console.log(`it is running on port${port}`);
+});
